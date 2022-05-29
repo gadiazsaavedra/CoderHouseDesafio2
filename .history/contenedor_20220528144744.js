@@ -57,13 +57,13 @@ class Contenedor {
         })
         .catch( err => console.log(err));
         await fs.writeFile(`./${this.oneway}`, JSON.stringify(collection));
-        console.log('Deleted product');
+        console.log('Objeto eliminado!');
         console.log('******************');
     }
 
     async deleteAll(){
         await fs.writeFile(`./${this.oneway}`, '');
-        console.log('every products were deleted');
+        console.log('Todos los objetos fueron eliminados');
     }
 
 }

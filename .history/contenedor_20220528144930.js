@@ -63,7 +63,7 @@ class Contenedor {
 
     async deleteAll(){
         await fs.writeFile(`./${this.oneway}`, '');
-        console.log('every products were deleted');
+        console.log('every produtTodos los objetos fueron eliminados');
     }
 
 }

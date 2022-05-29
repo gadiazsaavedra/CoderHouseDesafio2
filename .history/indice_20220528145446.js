@@ -60,16 +60,16 @@ async function main (){
      console.log(objs)
      console.log('******************');
 
-      console.log("ID Search")
+      console.log("ID SearchBUSCANDO POR ID")
       const res = await contenedor.getById(idp1);   
       console.log("res",res);
       console.log('******************');
 
-      console.log("Deleting by ID")
+      console.log("ELIMINANDO POR ID")
       objs =  await contenedor.deleteById(1);
       console.log('******************');
 
-     console.log("delete all")
+     console.log("ELIMINANDO TODO")
      objs =  await contenedor.deleteAll();
      console.log('******************');
 }

@@ -69,7 +69,7 @@ async function main (){
       objs =  await contenedor.deleteById(1);
       console.log('******************');
 
-     console.log("delete all")
+     console.log("Cancel all")
      objs =  await contenedor.deleteAll();
      console.log('******************');
 }

@@ -65,11 +65,11 @@ async function main (){
       console.log("res",res);
       console.log('******************');
 
-      console.log("Deleting by ID")
+      console.log("Deleting by ELIMINANDO POR ID")
       objs =  await contenedor.deleteById(1);
       console.log('******************');
 
-     console.log("delete all")
+     console.log("ELIMINANDO TODO")
      objs =  await contenedor.deleteAll();
      console.log('******************');
 }

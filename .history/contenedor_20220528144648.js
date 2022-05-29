@@ -22,7 +22,7 @@ class Contenedor {
            await fs.writeFile(this.oneway, JSON.stringify(objs,null,2));
             return newId
         } catch (error) {
-            throw new Error (`Fail to save:${error}`);
+            throw new Error (`Erros al guardar:${error}`);
         }
     }
 
@@ -57,13 +57,13 @@ class Contenedor {
         })
         .catch( err => console.log(err));
         await fs.writeFile(`./${this.oneway}`, JSON.stringify(collection));
-        console.log('Deleted product');
+        console.log('Objeto eliminado!');
         console.log('******************');
     }
 
     async deleteAll(){
         await fs.writeFile(`./${this.oneway}`, '');
-        console.log('every products were deleted');
+        console.log('Todos los objetos fueron eliminados');
     }
 
 }

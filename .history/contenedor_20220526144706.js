@@ -1,8 +1,8 @@
 const {promises : fs} = require('fs');
 
 class Contenedor {
-    constructor (oneway){
-        this.oneway = oneway
+    constructor (ruta){
+        this.ruta = ruta
     }
 
 
@@ -19,10 +19,10 @@ class Contenedor {
         const newObj ={...obj , id: newId}
         objs.push (newObj);
         try {
-           await fs.writeFile(this.oneway, JSON.stringify(objs,null,2));
+           await fs.writeFile(this.ruta, JSON.stringify(objs,null,2));
             return newId
         } catch (error) {
-            throw new Error (`Fail to save:${error}`);
+            throw new Error (`Erros al guardar:${error}`);
         }
     }
 
@@ -36,7 +36,7 @@ class Contenedor {
 
     async getAll(){
         try {
-            const objs = await fs.readFile(this.oneway,'utf-8');
+            const objs = await fs.readFile(this.ruta,'utf-8');
             return JSON.parse(objs);
 
         } catch (error) {
@@ -46,7 +46,7 @@ class Contenedor {
 
     async deleteById(id){
         let collection = []
-        await fs.readFile(`./${this.oneway}`,'utf-8')
+        await fs.readFile(`./${this.ruta}`,'utf-8')
         .then( contenido => {
             let col = JSON.parse(contenido)
             for (const ob of col) {
@@ -56,14 +56,14 @@ class Contenedor {
             }
         })
         .catch( err => console.log(err));
-        await fs.writeFile(`./${this.oneway}`, JSON.stringify(collection));
-        console.log('Deleted product');
+        await fs.writeFile(`./${this.ruta}`, JSON.stringify(collection));
+        console.log('Objeto eliminado!');
         console.log('******************');
     }
 
     async deleteAll(){
-        await fs.writeFile(`./${this.oneway}`, '');
-        console.log('every products were deleted');
+        await fs.writeFile(`./${this.ruta}`, '');
+        console.log('Todos los objetos fueron eliminados');
     }
 
 }

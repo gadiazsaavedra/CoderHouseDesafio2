@@ -45,31 +45,31 @@ async function main (){
      console.log("id Product 1:" ,idp1)
      console.log('******************');
 
-     console.log("Saving Product 2")
+     console.log("GUARDO PRODUCTO 2")
      let idp2 = await contenedor.save(p2)
-     console.log("id Product 2:" ,idp2)
+     console.log("id de p2:" ,idp2)
      console.log('******************');
 
-     console.log("Saving Product 3")
+     console.log("GUARDO PRODUCTO 3")
      let idp3 = await contenedor.save(p3);
-     console.log("id Product 3:" ,idp3)
+     console.log("id de p3:" ,idp3)
      console.log('******************');
 
-     console.log("Products")
+     console.log("Mostrando Productos")
      objs =  await contenedor.getAll();
      console.log(objs)
      console.log('******************');
 
-      console.log("ID Search")
+      console.log("BUSCANDO POR ID")
       const res = await contenedor.getById(idp1);   
       console.log("res",res);
       console.log('******************');
 
-      console.log("Deleting by ID")
+      console.log("ELIMINANDO POR ID")
       objs =  await contenedor.deleteById(1);
       console.log('******************');
 
-     console.log("delete all")
+     console.log("ELIMINANDO TODO")
      objs =  await contenedor.deleteAll();
      console.log('******************');
 }
